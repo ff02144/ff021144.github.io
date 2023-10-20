@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Enter two binary or hexadecimal numbers:</p>
+<input type="text" id="number1" placeholder="Enter first number">
+<input type="text" id="number2" placeholder="Enter second number">
+<button onclick="computeSum()">Compute Sum</button>
+<p id="result"></p>
+
+<script>
+function computeSum() {
+    var number1 = document.getElementById("number1").value;
+    var number2 = document.getElementById("number2").value;
+
+    var isBinary = /^[01]+$/.test(number1) && /^[01]+$/.test(number2);
+    var isHexadecimal = /^[0-9A-Fa-f]+$/.test(number1) && /^[0-9A-Fa-f]+$/.test(number2);
+
+    if (isBinary || isHexadecimal) {
+
+        var parsedNumber1 = isBinary ? parseInt(number1, 2) : parseInt(number1, 16);
+        var parsedNumber2 = isBinary ? parseInt(number2, 2) : parseInt(number2, 16);
+
+
+        var sum = parsedNumber1 + parsedNumber2;
+       document.getElementById("result").innerHTML = "Sum: " + sum;
+    } else {
+
+        document.getElementById("result").innerHTML = "Invalid input. Please enter binary or hexadecimal numbers.";
+    }
+}
+</script>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Enter two binary or hexadecimal numbers:</p>
+<input type="text" id="number1" placeholder="Enter first number">
+<input type="text" id="number2" placeholder="Enter second number">
+<button onclick="computeSum()">Compute Sum</button>
+<p id="result"></p>
+
+<script>
+function computeSum() {
+    var number1 = document.getElementById("number1").value;
+    var number2 = document.getElementById("number2").value;
+
+
+    var isBinary = /^[01]+$/.test(number1) && /^[01]+$/.test(number2);
+    var isHexadecimal = /^[0-9A-Fa-f]+$/.test(number1) && /^[0-9A-Fa-f]+$/.test(number2);
+
+    if (isBinary || isHexadecimal) {
+
+        var parsedNumber1 = isBinary ? parseInt(number1, 2) : parseInt(number1, 16);
+        var parsedNumber2 = isBinary ? parseInt(number2, 2) : parseInt(number2, 16);
+
+
+        var sum = parsedNumber1 + parsedNumber2;
+
+        document.getElementById("result").innerHTML = "Sum: " + sum;
+    } else {
+        document.getElementById("result").innerHTML = "Invalid input. Please enter binary or hexadecimal numbers.";
+    }
+}
+</script>
+
+</body>
+</html>
